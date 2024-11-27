@@ -123,9 +123,7 @@ const PermissionManagement = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center", marginBottom: "20px", color: "success" }}>
-        Role Management
-      </h2>
+       <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">Permission Management</h2>
     
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid

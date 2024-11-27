@@ -96,7 +96,7 @@ const UserManagement = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">User Management</h2>
+      <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">User Management</h2>
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid
           rows={users}
