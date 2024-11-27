@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UserManagement from "./UserManagement";
 import RoleManagement from "./RoleManagement";
-import PermissionManagement from "./Permissionmanagement";
+import PermissionManagement from "./PermissionManagement";
 
 
 
