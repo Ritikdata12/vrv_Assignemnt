@@ -1,0 +1,23 @@
+/* styles.css */
+.dashboard-container {
+    background-color: #f3f4f6; /* Light gray */
+    min-height: 100vh;
+    padding: 1.5rem;
+  }
+  
+  .card {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
