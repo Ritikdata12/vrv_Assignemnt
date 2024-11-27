@@ -25,8 +25,9 @@ The project demonstrates technical skills, creativity, and understanding of RBAC
 - **API Simulation** : JSON Server or any other mock API service.
 
 
-### Process
-  
+### process
+  - **json-server** :  for this 1st install npm install json-server
+ 
 
 ### Deployment:
 - **Frontend** : Frontend is deployed on vercel.
