@@ -15,12 +15,11 @@ import "./Dashboard.css";
 
 
 const Dashboard = () => {
-  const [data, setData] = useState(null); // Initialize as null
+  const [data, setData] = useState(null); 
   const [loading, setLoading] = useState(true);
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
-  // Fetch data from db.json
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -55,14 +54,11 @@ const Dashboard = () => {
     );
   }
 
-  // Count users, roles, and permissions
   const userCount = data.users?.length || 0;
 
-  // Count unique roles
   const uniqueRoles = data.roles ? new Set(data.roles.map((role) => role.role)) : new Set();
   const activeRoles = uniqueRoles.size;
 
-  // Count total permissions
   const totalPermissions = data.permissions
     ? data.permissions.reduce(
         (total, permission) => total + (permission.permissions?.length || 0),
@@ -76,7 +72,6 @@ const Dashboard = () => {
         Dashboard Overview
       </Typography>
       <Grid container spacing={4}>
-        {/* User Card */}
         <Grid item xs={12} md={4}>
           <Card className="shadow-md hover:shadow-lg">
             <CardContent>
@@ -93,7 +88,6 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        {/* Role Card */}
         <Grid item xs={12} md={4}>
           <Card className="shadow-md hover:shadow-lg">
             <CardContent>
@@ -110,7 +104,6 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        {/* Permissions Card */}
         <Grid item xs={12} md={4}>
           <Card className="shadow-md hover:shadow-lg">
             <CardContent>
@@ -128,9 +121,7 @@ const Dashboard = () => {
         </Grid>
       </Grid>
 
-      {/* Graph Section */}
       <Grid container spacing={4} className="mt-6">
-        {/* Role Management Pie Chart */}
         <Grid item xs={12} md={6}>
           <Card className="shadow-md hover:shadow-lg">
             <CardContent>
@@ -161,7 +152,6 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        {/* User Distribution Bar Chart */}
         <Grid item xs={12} md={6}>
           <Card className="shadow-md hover:shadow-lg">
             <CardContent>

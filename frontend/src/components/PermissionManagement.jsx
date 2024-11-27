@@ -41,7 +41,6 @@ const PermissionManagement = () => {
 
   const handleSave = () => {
     if (currentRole.id) {
-      // Update role in the API
       axios.put(`http://localhost:5000/Permissions/${currentRole.id}`, currentRole)
         .then(() => {
           setRoles(
@@ -53,7 +52,6 @@ const PermissionManagement = () => {
           console.error("There was an error updating the role!", error);
         });
     } else {
-      // Add new role to the API
       axios.post("http://localhost:5000/Permissions", currentRole)
         .then((response) => {
           setRoles([...roles, response.data]);
@@ -66,7 +64,6 @@ const PermissionManagement = () => {
   };
 
   const handleDelete = (id) => {
-    // Delete role from the API
     axios.delete(`http://localhost:5000/Permissions/${id}`)
       .then(() => {
         setRoles(roles.filter((role) => role.id !== id));
@@ -145,7 +142,6 @@ const PermissionManagement = () => {
         />
       </div>
 
-      {/* Role Modal */}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>{currentRole.id ? "Edit Role" : "Add Role"}</DialogTitle>
         <DialogContent>

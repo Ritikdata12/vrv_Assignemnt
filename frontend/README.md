@@ -1,8 +1,28 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
+- **React.js**: Frontend library for building UI.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Material-UI**: Pre-styled React components for faster development.
+
+### Backend
+- **JSON Server**: Mock REST API for development and testing.
+
+---
+
+## 🛠️ Prerequisites
+
+- **Node.js**: Make sure Node.js is installed on your system.
+- **NPM or Yarn**: To manage dependencies.
+
+---
+
+## ⚡ Getting Started
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-repo-name.git
+cd frontend

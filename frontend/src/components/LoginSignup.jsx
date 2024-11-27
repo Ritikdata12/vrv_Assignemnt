@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const LoginSignup = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
-  const navigate = useNavigate(); // For navigation
+  const navigate = useNavigate(); 
   const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
@@ -19,7 +19,6 @@ const LoginSignup = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate API validation
     setTimeout(() => {
       const storedData = JSON.parse(localStorage.getItem("users")) || [];
       const user = storedData.find(
@@ -28,7 +27,7 @@ const LoginSignup = () => {
 
       if (user) {
         alert(`Welcome back, ${user.name}!`);
-        navigate("/home"); // Redirect to the home page
+        navigate("/home"); 
       } else {
         alert("Invalid email or password!");
       }
@@ -88,9 +87,7 @@ const LoginSignup = () => {
           </button>
         </div>
 
-        {/* Form */}
         <div className="relative transition-all duration-500 ease-in-out">
-          {/* Login Form */}
           {isLogin && (
             <form onSubmit={handleLogin}>
               <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">

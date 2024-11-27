@@ -6,7 +6,6 @@ import { Button } from "@mui/material";
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
 
-  // Fetch users from the API
   useEffect(() => {
     axios.get("http://localhost:5000/users")
       .then((response) => {
@@ -18,7 +17,6 @@ const UserManagement = () => {
   }, []);
 
   const handleDelete = (id) => {
-    // Delete user from the API
     axios.delete(`http://localhost:5000/users/${id}`)
       .then(() => {
         setUsers(users.filter((user) => user.id !== id));

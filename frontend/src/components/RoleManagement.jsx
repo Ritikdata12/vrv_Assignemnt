@@ -17,14 +17,12 @@ const RoleManagement = () => {
   const [open, setOpen] = useState(false);
   const [currentRole, setCurrentRole] = useState({ id: null, name: "", email: "", role: "" });
 
-  const theme = useTheme(); // Access the current theme
-  const isDarkMode = theme.palette.mode === "dark"; // Check if the theme is in dark mode
+  const theme = useTheme(); 
+  const isDarkMode = theme.palette.mode === "dark"; 
 
-  // Define primary and secondary colors as white
-  const primary = "black";  // White color for primary
-  const secondary = "#FFFFFF";  // White color for secondary
+  const primary = "black";  
+  const secondary = "#FFFFFF";  
 
-  // Fetch roles from the API
   useEffect(() => {
     axios
       .get("http://localhost:5000/Roles")
@@ -53,7 +51,6 @@ const RoleManagement = () => {
     }
 
     if (currentRole.id) {
-      // Update existing role
       axios
         .put(`http://localhost:5000/Roles/${currentRole.id}`, currentRole)
         .then(() => {
@@ -66,7 +63,6 @@ const RoleManagement = () => {
           console.error("Error updating the role:", error);
         });
     } else {
-      // Add new role
       axios
         .post("http://localhost:5000/Roles", currentRole)
         .then((response) => {
