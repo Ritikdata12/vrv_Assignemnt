@@ -25,7 +25,7 @@ const RoleManagement = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/Roles")
+      .get("https://v2vapi.aditya-bansal.tech/Roles")
       .then((response) => {
         setRoles(response.data);
       })
@@ -52,7 +52,7 @@ const RoleManagement = () => {
 
     if (currentRole.id) {
       axios
-        .put(`http://localhost:5000/Roles/${currentRole.id}`, currentRole)
+        .put(`https://v2vapi.aditya-bansal.tech/Roles/${currentRole.id}`, currentRole)
         .then(() => {
           setRoles((prevRoles) =>
             prevRoles.map((role) => (role.id === currentRole.id ? currentRole : role))
@@ -64,7 +64,7 @@ const RoleManagement = () => {
         });
     } else {
       axios
-        .post("http://localhost:5000/Roles", currentRole)
+        .post("https://v2vapi.aditya-bansal.tech/Roles", currentRole)
         .then((response) => {
           setRoles((prevRoles) => [...prevRoles, response.data]);
           handleClose();
@@ -78,7 +78,7 @@ const RoleManagement = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this role?")) {
       axios
-        .delete(`http://localhost:5000/Roles/${id}`)
+        .delete(`https://v2vapi.aditya-bansal.tech/Roles/${id}`)
         .then(() => {
           setRoles((prevRoles) => prevRoles.filter((role) => role.id !== id));
         })

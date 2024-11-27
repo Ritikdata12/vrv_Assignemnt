@@ -20,7 +20,7 @@ const PermissionManagement = () => {
   const [permissionsList] = useState(["Read", "Write", "Delete"]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/Permissions")
+    axios.get("https://v2vapi.aditya-bansal.tech/Permissions")
       .then((response) => {
         setRoles(response.data);
       })
@@ -41,7 +41,7 @@ const PermissionManagement = () => {
 
   const handleSave = () => {
     if (currentRole.id) {
-      axios.put(`http://localhost:5000/Permissions/${currentRole.id}`, currentRole)
+      axios.put(`https://v2vapi.aditya-bansal.tech/Permissions/${currentRole.id}`, currentRole)
         .then(() => {
           setRoles(
             roles.map((role) => (role.id === currentRole.id ? currentRole : role))
@@ -52,7 +52,7 @@ const PermissionManagement = () => {
           console.error("There was an error updating the role!", error);
         });
     } else {
-      axios.post("http://localhost:5000/Permissions", currentRole)
+      axios.post("https://v2vapi.aditya-bansal.tech/Permissions", currentRole)
         .then((response) => {
           setRoles([...roles, response.data]);
           handleClose();
@@ -64,7 +64,7 @@ const PermissionManagement = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/Permissions/${id}`)
+    axios.delete(`https://v2vapi.aditya-bansal.tech/Permissions/${id}`)
       .then(() => {
         setRoles(roles.filter((role) => role.id !== id));
       })
